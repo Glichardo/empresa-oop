@@ -7,5 +7,6 @@ Esto es una tarea de clase. Consiste en una aplicación con empresas, departamen
 
 ## Authors
 
-- [@octokatherine](https://www.github.com/glichardo)
+- [@Glichardo](https://www.github.com/glichardo)
+
 
