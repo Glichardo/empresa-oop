@@ -1,18 +1,17 @@
 package org.ies.tierno.pojos;
 
-import java.sql.Array;
 import java.util.Arrays;
 import java.util.Objects;
 
 public class Company {
     private String companyName;
     private String cif;
-    private Department[] departaments;
+    private Department[] department;
 
-    public Company(String companyName, String cif, Department[] departaments) {
+    public Company(String companyName, String cif, Department[] department) {
         this.companyName = companyName;
         this.cif = cif;
-        this.departaments = departaments;
+        this.department = department;
     }
 
     public String getCompanyName() {
@@ -31,24 +30,24 @@ public class Company {
         this.cif = cif;
     }
 
-    public Department[] getDepartaments() {
-        return departaments;
+    public Department[] getDepartment() {
+        return department;
     }
 
-    public void setDepartaments(Department[] departaments) {
-        this.departaments = departaments;
+    public void setDepartment(Department[] department) {
+        this.department = department;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Company company = (Company) o;
-        return Objects.equals(companyName, company.companyName) && Objects.equals(cif, company.cif) && Objects.deepEquals(departaments, company.departaments);
+        return Objects.equals(companyName, company.companyName) && Objects.equals(cif, company.cif) && Objects.deepEquals(department, company.department);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(companyName, cif, Arrays.hashCode(departaments));
+        return Objects.hash(companyName, cif, Arrays.hashCode(department));
     }
 
     @Override
@@ -56,7 +55,7 @@ public class Company {
         return "Company{" +
                 "companyName='" + companyName + '\'' +
                 ", cif='" + cif + '\'' +
-                ", departaments=" + Arrays.toString(departaments) +
+                ", departaments=" + Arrays.toString(department) +
                 '}';
     }
 }
