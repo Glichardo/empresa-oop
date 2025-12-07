@@ -1,6 +1,7 @@
 package org.ies.tierno.pojos;
 
 import java.util.Arrays;
+
 import java.util.Objects;
 
 public class Company {
@@ -52,10 +53,6 @@ public class Company {
 
     @Override
     public String toString() {
-        return "Company{" +
-                "companyName='" + companyName + '\'' +
-                ", cif='" + cif + '\'' +
-                ", departaments=" + Arrays.toString(department) +
-                '}';
+        return "Company{" + "companyName='" + companyName + '\'' + ", cif='" + cif + '\'' + ", departaments=" + Arrays.toString(department) + '}';
     }
 }

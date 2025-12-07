@@ -8,7 +8,7 @@ public class Employee {
     private String surname;
     private String role;
 
-    public Employee(String nif, String name, String surname, String role){
+    public Employee(String nif, String name, String surname, String role) {
         this.nif = nif;
         this.name = name;
         this.surname = surname;

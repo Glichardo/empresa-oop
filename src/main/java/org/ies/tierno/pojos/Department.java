@@ -1,6 +1,7 @@
 package org.ies.tierno.pojos;
 
 import java.util.Arrays;
+
 import java.util.Objects;
 
 public class Department {
@@ -52,10 +53,6 @@ public class Department {
 
     @Override
     public String toString() {
-        return "Department{" +
-                "departmentName='" + departmentName + '\'' +
-                ", budget=" + budget +
-                ", employees=" + Arrays.toString(employees) +
-                '}';
+        return "Department{" + "departmentName='" + departmentName + '\'' + ", budget=" + budget + ", employees=" + Arrays.toString(employees) + '}';
     }
 }

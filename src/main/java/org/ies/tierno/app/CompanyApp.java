@@ -1,8 +1,11 @@
 package org.ies.tierno.app;
 
 import org.ies.tierno.pojos.Company;
+
 import org.ies.tierno.pojos.Department;
+
 import org.ies.tierno.pojos.Employee;
+
 import org.ies.tierno.readers.CompanyReader;
 
 import java.util.Scanner;
@@ -14,14 +17,12 @@ public class CompanyApp {
     public void run() {
 
         startMessage();
+        askForData();
+        showMenu();
 
-        // Pedimos datos de la empresa
-        CompanyReader cr = new CompanyReader();
-        company = cr.read(scanner);
+    }
 
-        System.out.println("Datos introducidos correctamente");
-
-        // Bucle del menú
+    public void showMenu() { //bucle con menú
         int option;
         do {
             System.out.println("Selecciona una opción:");
@@ -106,16 +107,14 @@ public class CompanyApp {
         } while (option != 4);
     }
 
-    //buscar departamento por nombre
-    private Department findDepartment(String name) {
+    private Department findDepartment(String name) { //buscar departamento por nombre
         for (Department d : company.getDepartment()) {
             if (d.getDepartmentName().equalsIgnoreCase(name)) return d;
         }
         return null;
     }
 
-    //buscar empleado en departamento por nif
-    private Employee findEmployeeInDepartment(Department dept, String nif) {
+    private Employee findEmployeeInDepartment(Department dept, String nif) {  //buscar empleado en departamento por nif
         for (Employee e : dept.getEmployees()) {
             if (e.getNif().equalsIgnoreCase(nif)) return e;
         }
@@ -126,9 +125,16 @@ public class CompanyApp {
         new CompanyApp().run();
     }
 
-    public static void startMessage(){
-        //mensaje al ejecutar
+    public static void startMessage() { //mensaje al ejecutar
         System.out.println("Introduce los datos de la empresa en orden:");
         System.out.println("Nombre de la empresa, CIF, número de departamentos.");
+    }
+
+    public void askForData() { // pedimos datos de la empresa
+        CompanyReader cr = new CompanyReader();
+        company = cr.read(scanner);
+
+        System.out.println("Datos introducidos correctamente");
+
     }
 }
